@@ -18,7 +18,7 @@ import {
   FieldGroup,
 } from "@/components/ui/field"
 
-// schema
+// ✅ schema
 const schema = z.object({
   name: z.string().min(2, "Nama wajib diisi"),
   company: z.string().optional(),
@@ -27,8 +27,12 @@ const schema = z.object({
   message: z.string().min(10, "Pesan minimal 10 karakter"),
 })
 
+// ✅ ambil type dari schema
+type FormData = z.infer<typeof schema>
+
 export const Contact = () => {
-  const form = useForm({
+  // ✅ kasih generic ke useForm
+  const form = useForm<FormData>({
     resolver: zodResolver(schema),
     defaultValues: {
       name: "",
@@ -39,7 +43,8 @@ export const Contact = () => {
     },
   })
 
-  const onSubmit = (data) => {
+  // ✅ sekarang data sudah tidak merah
+  const onSubmit = (data: FormData) => {
     console.log(data)
   }
 
@@ -52,13 +57,11 @@ export const Contact = () => {
       viewport={{ once: true, amount: 0.3 }}
       variants={staggerContainer(0)}
     >
-      {/* HEADER */}
       <SectionHeader
         subtitle="Contact"
         title="Let’s Make Something Awesome Together!"
       />
 
-      {/* FORM */}
       <motion.form
         onSubmit={form.handleSubmit(onSubmit)}
         className="mt-10 max-w-5xl space-y-4"
@@ -66,19 +69,13 @@ export const Contact = () => {
       >
         <FieldGroup>
 
-          {/* ROW 1 */}
           <div className="grid md:grid-cols-2 gap-4">
-            
             <Controller
               name="name"
               control={form.control}
               render={({ field, fieldState }) => (
                 <Field data-invalid={fieldState.invalid}>
-                  <Input
-                    {...field}
-                    placeholder="Your name"
-                    className="bg-zinc-900 border-zinc-800"
-                  />
+                  <Input {...field} placeholder="Your name" className="bg-zinc-900 border-zinc-800" />
                   {fieldState.invalid && (
                     <FieldError errors={[fieldState.error]} />
                   )}
@@ -91,29 +88,19 @@ export const Contact = () => {
               control={form.control}
               render={({ field }) => (
                 <Field>
-                  <Input
-                    {...field}
-                    placeholder="Company name"
-                    className="bg-zinc-900 border-zinc-800"
-                  />
+                  <Input {...field} placeholder="Company name" className="bg-zinc-900 border-zinc-800" />
                 </Field>
               )}
             />
           </div>
 
-          {/* ROW 2 */}
           <div className="grid md:grid-cols-2 gap-4">
-            
             <Controller
               name="email"
               control={form.control}
               render={({ field, fieldState }) => (
                 <Field data-invalid={fieldState.invalid}>
-                  <Input
-                    {...field}
-                    placeholder="your@email.com"
-                    className="bg-zinc-900 border-zinc-800"
-                  />
+                  <Input {...field} placeholder="your@email.com" className="bg-zinc-900 border-zinc-800" />
                   {fieldState.invalid && (
                     <FieldError errors={[fieldState.error]} />
                   )}
@@ -126,27 +113,18 @@ export const Contact = () => {
               control={form.control}
               render={({ field }) => (
                 <Field>
-                  <Input
-                    {...field}
-                    placeholder="+1234567890"
-                    className="bg-zinc-900 border-zinc-800"
-                  />
+                  <Input {...field} placeholder="+1234567890" className="bg-zinc-900 border-zinc-800" />
                 </Field>
               )}
             />
           </div>
 
-          {/* MESSAGE */}
           <Controller
             name="message"
             control={form.control}
             render={({ field, fieldState }) => (
               <Field data-invalid={fieldState.invalid}>
-                <Textarea
-                  {...field}
-                  placeholder="Write your message..."
-                  className="bg-zinc-900 border-zinc-800 min-h-[120px]"
-                />
+                <Textarea {...field} placeholder="Write your message..." className="bg-zinc-900 border-zinc-800 min-h-[120px]" />
                 {fieldState.invalid && (
                   <FieldError errors={[fieldState.error]} />
                 )}
@@ -156,11 +134,7 @@ export const Contact = () => {
 
         </FieldGroup>
 
-        {/* BUTTON */}
-        <Button
-          type="submit"
-          className="bg-white text-black hover:bg-gray-200"
-        >
+        <Button type="submit" className="bg-white text-black hover:bg-gray-200">
           Send Message
         </Button>
       </motion.form>

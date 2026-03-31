@@ -10,7 +10,7 @@ import { cn } from "@/lib/utils";
 import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
 
-import { Ghost, MenuIcon } from "lucide-react";
+import { MenuIcon } from "lucide-react";
 
 import { navLinks, socialLinks } from "@/constant";
 
