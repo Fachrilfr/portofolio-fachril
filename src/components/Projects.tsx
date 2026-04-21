@@ -32,7 +32,7 @@ export const Projects = () => {
         initial='hidden'
         whileInView='visible'
         viewport={{ once: true, amount: 0.3 }}
-        variants={staggerContainer(0.5)}
+        variants={staggerContainer(0.6)}
       >
         {projectsData.map((project, i) => (
           <ProjectCard 

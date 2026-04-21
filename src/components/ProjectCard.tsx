@@ -7,9 +7,9 @@ import { fadeUp } from "@/lib/animations";
 import type { ProjectType } from "@/types";
 import { motion } from "motion/react";
 
-export const ProjectCard = ({ 
-  imgSrc, 
-  projectLink, 
+export const ProjectCard = ({
+  imgSrc,
+  projectLink,
   tags,
   title,
   description
@@ -24,11 +24,11 @@ export const ProjectCard = ({
     >
       <div className='relative'>
         {/* IMAGE */}
-        <figure className='overflow-hidden rounded-md'>
-          <img 
-            src={imgSrc} 
+        <figure className='overflow-hidden rounded-md aspect-[16/10]'>
+          <img
+            src={imgSrc}
             alt={title}
-            className='rounded-md transition duration-500 group-hover:scale-110 w-full'
+            className='w-full h-full object-cover rounded-md transition duration-500 group-hover:scale-110'
           />
         </figure>
 

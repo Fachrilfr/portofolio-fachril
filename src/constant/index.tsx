@@ -80,6 +80,13 @@ const projectsData: ProjectType[] = [
     description: 'Rekita is a mobile app for smarter waste management using AI and Geo-Mapping, promoting efficient and eco-friendly habits.',
   },
   {
+    imgSrc: '/images/asphalteye.jpg',
+    title: 'AsphaltEye – Road Damage Detection',
+    tags: ['Machine Learning'],
+    projectLink: '#',
+    description: 'Sistem deteksi kerusakan jalan otomatis berbasis Computer Vision dan Machine Learning.',
+  },
+  {
     imgSrc: '/images/shujia.jpg',
     title: 'Shujia - Book Home Service',
     tags: ['Fullstack Web Application'],
