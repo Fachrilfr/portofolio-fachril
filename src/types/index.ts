@@ -11,6 +11,11 @@ export type ProjectType = {
   tags: string[];
   projectLink: string;
   description: string;
+  tech?: string[];
+  role?: string;
+  purpose?: string;
+  process?: string;
+  outcome?: string;
 };
 
 export type ExperienceType = {

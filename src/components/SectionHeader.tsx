@@ -18,7 +18,7 @@ export const SectionHeader = ({ title, subtitle, }:
             <>
                 <motion.p
                     variants={fadeUp}
-                    className='flex items-center justify-center py-1 gap-2 border border-neutral-600 rounded-sm w-32'
+                    className='flex items-center justify-center py-1 gap-2 border border-zinc-300 dark:border-neutral-600 rounded-sm w-32 text-zinc-600 dark:text-neutral-300 text-sm font-medium uppercase'
                 >
                     <SparkleIcon size={15}/> {subtitle}
                 </motion.p>

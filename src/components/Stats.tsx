@@ -22,11 +22,11 @@ export const Stats = () => {
                 <motion.div
                     key={i}
                     variants={fadeUp}
-                    className='border border-neutral-700 rounded-xl flex justify-center items-center flex-col py-6'
+                    className='border border-zinc-200 dark:border-neutral-700 bg-zinc-50/50 dark:bg-neutral-900/30 rounded-xl flex justify-center items-center flex-col py-6 shadow-sm dark:shadow-none'
                 >
-                    <p className='text-4xl capitalize font-bold lining-nums'>{stats.number}</p>
+                    <p className='text-4xl capitalize font-bold lining-nums text-zinc-900 dark:text-white'>{stats.number}</p>
 
-                    <p className='text-neutral-300'>{stats.label}</p>
+                    <p className='text-zinc-600 dark:text-neutral-300'>{stats.label}</p>
                 </motion.div>
             ))}
         </motion.section>

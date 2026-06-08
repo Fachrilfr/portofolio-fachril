@@ -1,5 +1,6 @@
 "use client"
 
+import { useState } from "react"
 import { motion } from "motion/react"
 import { useForm, Controller } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
@@ -31,6 +32,8 @@ const schema = z.object({
 type FormData = z.infer<typeof schema>
 
 export const Contact = () => {
+  const [isSubmitted, setIsSubmitted] = useState(false)
+
   // ✅ kasih generic ke useForm
   const form = useForm<FormData>({
     resolver: zodResolver(schema),
@@ -46,6 +49,11 @@ export const Contact = () => {
   // ✅ sekarang data sudah tidak merah
   const onSubmit = (data: FormData) => {
     console.log(data)
+    setIsSubmitted(true)
+    form.reset()
+    setTimeout(() => {
+      setIsSubmitted(false)
+    }, 5000)
   }
 
   return (
@@ -75,7 +83,7 @@ export const Contact = () => {
               control={form.control}
               render={({ field, fieldState }) => (
                 <Field data-invalid={fieldState.invalid}>
-                  <Input {...field} placeholder="Your name" className="bg-zinc-900 border-zinc-800" />
+                  <Input {...field} placeholder="Your name" className="bg-zinc-100 dark:bg-zinc-900 border-zinc-200 dark:border-zinc-800 text-zinc-900 dark:text-zinc-100" />
                   {fieldState.invalid && (
                     <FieldError errors={[fieldState.error]} />
                   )}
@@ -88,7 +96,7 @@ export const Contact = () => {
               control={form.control}
               render={({ field }) => (
                 <Field>
-                  <Input {...field} placeholder="Company name" className="bg-zinc-900 border-zinc-800" />
+                  <Input {...field} placeholder="Company name" className="bg-zinc-100 dark:bg-zinc-900 border-zinc-200 dark:border-zinc-800 text-zinc-900 dark:text-zinc-100" />
                 </Field>
               )}
             />
@@ -100,7 +108,7 @@ export const Contact = () => {
               control={form.control}
               render={({ field, fieldState }) => (
                 <Field data-invalid={fieldState.invalid}>
-                  <Input {...field} placeholder="your@email.com" className="bg-zinc-900 border-zinc-800" />
+                  <Input {...field} placeholder="your@email.com" className="bg-zinc-100 dark:bg-zinc-900 border-zinc-200 dark:border-zinc-800 text-zinc-900 dark:text-zinc-100" />
                   {fieldState.invalid && (
                     <FieldError errors={[fieldState.error]} />
                   )}
@@ -113,7 +121,7 @@ export const Contact = () => {
               control={form.control}
               render={({ field }) => (
                 <Field>
-                  <Input {...field} placeholder="+1234567890" className="bg-zinc-900 border-zinc-800" />
+                  <Input {...field} placeholder="+1234567890" className="bg-zinc-100 dark:bg-zinc-900 border-zinc-200 dark:border-zinc-800 text-zinc-900 dark:text-zinc-100" />
                 </Field>
               )}
             />
@@ -124,7 +132,7 @@ export const Contact = () => {
             control={form.control}
             render={({ field, fieldState }) => (
               <Field data-invalid={fieldState.invalid}>
-                <Textarea {...field} placeholder="Write your message..." className="bg-zinc-900 border-zinc-800 min-h-[120px]" />
+                <Textarea {...field} placeholder="Write your message..." className="bg-zinc-100 dark:bg-zinc-900 border-zinc-200 dark:border-zinc-800 text-zinc-900 dark:text-zinc-100 min-h-[120px]" />
                 {fieldState.invalid && (
                   <FieldError errors={[fieldState.error]} />
                 )}
@@ -134,7 +142,17 @@ export const Contact = () => {
 
         </FieldGroup>
 
-        <Button type="submit" className="bg-white text-black hover:bg-gray-200">
+        {isSubmitted && (
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="p-4 bg-green-500/10 border border-green-500/30 text-green-400 rounded-lg text-sm text-center"
+          >
+            Thank you! Your message has been sent successfully.
+          </motion.div>
+        )}
+
+        <Button type="submit" className="bg-white text-black hover:bg-gray-200 cursor-pointer">
           Send Message
         </Button>
       </motion.form>

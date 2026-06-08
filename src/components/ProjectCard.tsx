@@ -7,20 +7,22 @@ import { fadeUp } from "@/lib/animations";
 import type { ProjectType } from "@/types";
 import { motion } from "motion/react";
 
+interface ProjectCardProps extends ProjectType {
+  onClick: () => void;
+}
+
 export const ProjectCard = ({
   imgSrc,
-  projectLink,
   tags,
   title,
-  description
-}: ProjectType) => {
+  description,
+  onClick
+}: ProjectCardProps) => {
   return (
-    <motion.a
-      href={projectLink}
-      target="_blank"
-      rel="noopener noreferrer"
+    <motion.div
+      onClick={onClick}
       variants={fadeUp}
-      className='block group'
+      className='block group cursor-pointer'
     >
       <div className='relative'>
         {/* IMAGE */}
@@ -37,7 +39,7 @@ export const ProjectCard = ({
           {tags.map((tag, i) => (
             <span
               key={i}
-              className='bg-background group-hover:bg-primary group-hover:text-black py-1 px-2 rounded-sm text-sm'
+              className='bg-background border border-zinc-200 dark:border-neutral-800 text-zinc-800 dark:text-zinc-200 group-hover:bg-primary group-hover:text-primary-foreground dark:group-hover:text-primary-foreground py-1 px-2 rounded-sm text-sm transition-colors duration-200'
             >
               {tag}
             </span>
@@ -54,6 +56,6 @@ export const ProjectCard = ({
           {description}
         </p>
       </div>
-    </motion.a>
+    </motion.div>
   );
 };

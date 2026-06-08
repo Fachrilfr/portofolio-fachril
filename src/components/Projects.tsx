@@ -3,16 +3,21 @@
  * @license Apache-2.0
  */
 
+import { useState } from 'react';
 import { motion } from 'motion/react';
 
 import { staggerContainer } from '@/lib/animations';
 
 import { SectionHeader } from '@/components/SectionHeader';
 import { ProjectCard } from '@/components/ProjectCard';
+import { ProjectDetailModal } from '@/components/ProjectDetailModal';
 
 import { projectsData } from '@/constant';
+import type { ProjectType } from '@/types';
 
 export const Projects = () => {
+  const [selectedProject, setSelectedProject] = useState<ProjectType | null>(null);
+
   return (
     <motion.section
       initial='hidden'
@@ -42,9 +47,16 @@ export const Projects = () => {
             tags={project.tags}
             title={project.title}
             description={project.description}
+            onClick={() => setSelectedProject(project)}
           />
         ))}
       </motion.div>
+
+      {/* PROJECT DETAIL MODAL */}
+      <ProjectDetailModal 
+        project={selectedProject}
+        onClose={() => setSelectedProject(null)}
+      />
     </motion.section>
   );
 };

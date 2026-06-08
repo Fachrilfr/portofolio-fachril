@@ -30,7 +30,7 @@ export const Resume = () => {
 
             <motion.p 
                 variants={fadeUp} 
-                className='mt-4 text-neutral-300'
+                className='mt-4 text-zinc-600 dark:text-neutral-300'
             >
                 With a background in Computer Science at Binus University and hands-on experience through various academic projects, I have developed skills in web development and foundational Artificial Intelligence. I am experienced in building applications using React and Node.js, while also exploring Machine Learning and Computer Vision. Each project has strengthened my ability to create functional, efficient, and user-friendly solutions.
             </motion.p>

@@ -23,7 +23,7 @@ export const Hero = () => {
         >
             <motion.p 
                 variants={fadeUp}
-                className='flex items-center justify-center py-1 gap-2 border border-neutral-600 rounded-sm w-32'
+                className='flex items-center justify-center py-1 gap-2 border border-zinc-300 dark:border-neutral-600 rounded-sm w-32 text-zinc-600 dark:text-neutral-300 text-sm font-medium uppercase'
             >
                 <SparkleIcon size={15}/> <span>Introduction</span>
             </motion.p>
@@ -43,7 +43,9 @@ export const Hero = () => {
                     <a href='#projects'>My projects</a>
                 </Button>
 
-                <Button variant='outline'>Download CV</Button>
+                <Button variant='outline' asChild>
+                    <a href='#resume'>Download CV</a>
+                </Button>
             </motion.div>
         </motion.section>
     );
