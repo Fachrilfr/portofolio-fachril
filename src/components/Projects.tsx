@@ -53,7 +53,7 @@ export const Projects = () => {
     <motion.section
       initial='hidden'
       whileInView='visible'
-      viewport={{ once: true, amount: 0.1 }}
+      viewport={{ once: true, amount: 0.05 }}
       variants={staggerContainer(0)}
       className='mt-30 scroll-mt-10'
       id='projects'

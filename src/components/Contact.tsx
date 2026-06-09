@@ -62,7 +62,7 @@ export const Contact = () => {
       className="mt-30 scroll-mt-10"
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, amount: 0.3 }}
+      viewport={{ once: true, amount: 0.05 }}
       variants={staggerContainer(0)}
     >
       <SectionHeader

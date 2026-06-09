@@ -347,25 +347,25 @@ const services: ServiceType[] = [
     title: 'UI/UX Design',
     desc: 'Designing clean, intuitive, and user-friendly interfaces that improve user experience and boost conversions.',
     projects: '1 Project',
-    icon: <Layers className='h-6 w-6 text-green-400' />,
+    icon: <Layers className='h-6 w-6 text-[#a855f7]' />,
   },
   {
     title: 'Web Development',
     desc: 'Building high-performance, SEO-friendly websites using Next.js, Tailwind, and modern web technologies.',
     projects: '4 Projects',
-    icon: <Globe className='h-6 w-6 text-green-400' />,
+    icon: <Globe className='h-6 w-6 text-[#e8445a]' />,
   },
   {
     title: 'Mobile App',
     desc: 'Creating pixel-perfect app interfaces optimized for both iOS and Android devices with smooth usability.',
     projects: '2 Projects',
-    icon: <Smartphone className='h-6 w-6 text-green-400' />,
+    icon: <Smartphone className='h-6 w-6 text-[#f57f42]' />,
   },
   {
     title: 'Machine Learning',
     desc: 'Developing and deploying intelligent models, computer vision systems, and deep learning solutions.',
     projects: '2 Projects',
-    icon: <Brain className='h-6 w-6 text-green-400' />,
+    icon: <Brain className='h-6 w-6 text-[#f5c542]' />,
   },
 ];
 

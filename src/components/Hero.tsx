@@ -70,8 +70,7 @@ export const Hero = () => {
   return (
     <motion.section
       initial='hidden'
-      whileInView='visible'
-      viewport={{ once: true, amount: 0.3 }}
+      animate='visible'
       variants={staggerContainer(0)}
       className='pt-20'
       id='hero'
