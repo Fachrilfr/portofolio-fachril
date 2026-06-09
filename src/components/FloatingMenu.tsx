@@ -10,10 +10,10 @@ export const FloatingMenu = () => {
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme") as "light" | "dark" | null;
     const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    
+
     const activeTheme = savedTheme || (prefersDark ? "dark" : "light");
     setTheme(activeTheme);
-    
+
     if (activeTheme === "dark") {
       document.body.classList.add("dark");
     } else {
@@ -25,7 +25,7 @@ export const FloatingMenu = () => {
     const newTheme = theme === "dark" ? "light" : "dark";
     setTheme(newTheme);
     localStorage.setItem("theme", newTheme);
-    
+
     if (newTheme === "dark") {
       document.body.classList.add("dark");
     } else {

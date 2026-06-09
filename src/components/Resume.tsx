@@ -71,10 +71,15 @@ export const Resume = () => {
             <div className='my-16'>
                 <motion.h2
                     variants={fadeUp}
-                    className='text-3xl fonst-semibold mb-8 capitalize'
+                    className='text-3xl font-semibold capitalize'
                 >
                     My favorite tools
                 </motion.h2>
+
+                <motion.div
+                    variants={fadeUp}
+                    className="h-[4px] w-36 bg-gradient-to-r from-[#a855f7] via-[#e8445a] to-[#f5c542] mt-3 mb-8 rounded-full"
+                />
 
                 <motion.div
                     initial='hidden'

@@ -3,7 +3,7 @@
  * @license Apache-2.0
  */
 
-import {useState} from "react";
+import { useState } from "react";
 
 import { cn } from "@/lib/utils";
 
@@ -26,7 +26,7 @@ export const Sidebar = () => {
                         size='icon'
                         className='m-4 fixed top-4 right-4 z-50 border-2 border-zinc-200 dark:border-neutral-700 hover:border-primary bg-zinc-100 dark:bg-neutral-800 text-neutral-950 dark:text-white py-5 px-5 rounded-full hover:text-primary cursor-pointer shadow-md size-[50px] md:size-[54px] flex items-center justify-center'
                     >
-                        <MenuIcon size={24}/>
+                        <MenuIcon size={24} />
                     </Button>
                 </SheetTrigger>
 
@@ -43,16 +43,16 @@ export const Sidebar = () => {
                             const Icon = link.icon;
 
                             return (
-                                <a 
+                                <a
                                     key={link.label}
                                     href={link.link}
                                     onClick={() => setActive(link.link)}
-                                    className={cn('text-zinc-600 dark:text-neutral-300 flex items-center gap-2 hover:text-primary transition-colors duration-200 text-base', 
-                                        active == link.link && 'text-primary', 
+                                    className={cn('text-zinc-600 dark:text-neutral-300 flex items-center gap-2 hover:text-primary transition-colors duration-200 text-base',
+                                        active == link.link && 'text-primary',
 
                                     )}
                                 >
-                                    <Icon className='size-4'/> {link.label}
+                                    <Icon className='size-4' /> {link.label}
                                 </a>
                             )
                         })}
@@ -66,8 +66,8 @@ export const Sidebar = () => {
                                 const Icon = social.icon;
 
                                 return (
-                                    <a 
-                                        key={i} 
+                                    <a
+                                        key={i}
                                         href={social.link}
                                         className='hover:text-primary border-2 border-zinc-300 dark:border-neutral-500 p-2 rounded-full hover:border-primary transition duration-200'
                                     >

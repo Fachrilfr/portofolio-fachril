@@ -26,20 +26,20 @@ export const Profile = () => {
                 />
 
                 {/* Location */}
-                <div className='mt-2'>
+                <div className='mt-6'>
                     <p className='text-sm text-zinc-500 dark:text-neutral-400'>Based in:</p>
                     <p className='text-lg capitalize'>Tangerang, Banten</p>
                 </div>
 
                 {/* Contact */}
-                <div className='mt-2'>
+                <div className='mt-6'>
                     <p className='text-sm text-zinc-500 dark:text-neutral-400'>Contact:</p>
                     <p className='text-lg'>+62 857-7671-0701</p>
                     <p className='text-lg'>fachrilfr13@gmail.com</p>
                 </div>
 
                 {/* Social Media (Center & Only 3) */}
-                <div className='flex justify-center gap-4 pt-2 text-zinc-400 dark:text-neutral-500'>
+                <div className='flex justify-center gap-4 pt-4 text-zinc-400 dark:text-neutral-500'>
                     {socialLinks.slice(0, 3).map((social, i) => {
                         const Icon = social.icon;
 
@@ -58,7 +58,7 @@ export const Profile = () => {
 
                 {/* Button */}
                 <Button
-                    className='mt-2 cursor-pointer'
+                    className='mt-4 cursor-pointer'
                     size='lg'
                     asChild
                 >

@@ -85,7 +85,7 @@ export const ProjectDetailModal = ({
 
               {/* CASE STUDY TWO COLUMN LAYOUT */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-6">
-                
+
                 {/* LEFT 2 COLUMNS: Case Study Sections */}
                 <div className="md:col-span-2 space-y-8">
                   {/* Overview */}
@@ -182,7 +182,7 @@ export const ProjectDetailModal = ({
             >
               Close
             </Button>
-            
+
             <Button asChild className="cursor-pointer">
               <a
                 href={project.projectLink}
