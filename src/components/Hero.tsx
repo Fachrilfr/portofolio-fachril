@@ -44,7 +44,7 @@ export const Hero = () => {
                 </Button>
 
                 <Button variant='outline' asChild>
-                    <a href='#resume'>Download CV</a>
+                    <a href='/Fachril_CV_2026.pdf' download='Fachril_CV_2026.pdf'>Download CV</a>
                 </Button>
             </motion.div>
         </motion.section>
