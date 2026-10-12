@@ -34,7 +34,7 @@ export const Profile = () => {
                 {/* Contact */}
                 <div className='mt-6'>
                     <p className='text-sm text-zinc-500 dark:text-neutral-400'>Contact:</p>
-                    <p className='text-lg'>+62 857-7671-0701</p>
+                    <p className='text-lg'>+62 856-8348-284</p>
                     <p className='text-lg'>fachrilfr13@gmail.com</p>
                 </div>
 
