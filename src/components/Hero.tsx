@@ -111,7 +111,13 @@ export const Hero = () => {
         </Button>
 
         <Button variant='outline' asChild>
-          <a href='/Fachril_CV_2026.pdf' download='Fachril_CV_2026.pdf'>Download CV</a>
+          <a
+            href='/Fachril%20Firmansyah%20CV.pdf'
+            target='_blank'
+            rel='noopener noreferrer'
+          >
+            Download CV
+          </a>
         </Button>
       </motion.div>
     </motion.section>
